@@ -1,21 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+from zena_data import ZENA_DATA
+from sota_data import SOTA_DATA
 
 # Sample data (replace this with your actual data)
-data = [
-    {"date": "2023-09-20", "distance_miles": 1.30, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-21", "distance_miles": 2.82, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-23", "distance_miles": 2.91, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-25", "distance_miles": 3.25, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-27", "distance_miles": 3.74, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-29", "distance_miles": 3.80, "time_minutes": 65, "name": "Zena"},
-    {"date": "2023-09-20", "distance_miles": 2.61, "time_minutes": 30, "name": "Sota"},
-    {"date": "2023-09-21", "distance_miles": 2.64, "time_minutes": 30, "name": "Sota"},
-    {"date": "2023-09-23", "distance_miles": 2.84, "time_minutes": 30, "name": "Sota"},
-    {"date": "2023-09-25", "distance_miles": 2.32, "time_minutes": 30, "name": "Sota"},
-    {"date": "2023-09-27", "distance_miles": 2.67, "time_minutes": 30, "name": "Sota"}
-]
+data = ZENA_DATA + SOTA_DATA
 
 # Create a Pandas DataFrame from the data
 df = pd.DataFrame(data)
