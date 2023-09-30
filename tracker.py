@@ -14,7 +14,7 @@ df = pd.DataFrame(data)
 df["date"] = pd.to_datetime(df["date"])
 
 # Calculate pace (minutes per mile)
-df["pace"] = df["distance_miles"] / df["time_minutes"]
+df["pace"] = df["time_minutes"] / df["distance_miles"]
 
 # Separate data for Zena and Sota
 zena_data = df[df["name"] == "Zena"]
@@ -32,8 +32,8 @@ ax1.plot(zena_data["date"], zena_data["pace"], label="Zena", color="red")
 ax1.plot(sota_data["date"], sota_data["pace"], label="Sota", color="green")
 
 ax1.set_xlabel("Date")
-ax1.set_ylabel("Pace (miles per minute)")
-ax1.set_title("Pace in Miles per Minute")
+ax1.set_ylabel("Pace (minutes per mile)")
+ax1.set_title("Pace in Minutes per Mile")
 ax1.legend()
 
 ########################################################################
