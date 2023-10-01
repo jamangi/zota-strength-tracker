@@ -1,26 +1,23 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
-from zena_data import ZENA_DATA
-from sota_data import SOTA_DATA
+from zena_data import ZENA_DATA, ZENA_CONSISTENCY_TUPLES
+from sota_data import SOTA_DATA, SOTA_CONSISTENCY_TUPLES
+from shauntal_tracker.consistency_tracker import calculate_consistency, save_plot
 
-# Sample data (replace this with your actual data)
 data = ZENA_DATA + SOTA_DATA
-
-# Create a Pandas DataFrame from the data
 df = pd.DataFrame(data)
-
-# Convert the date column to datetime
 df["date"] = pd.to_datetime(df["date"])
-
-# Calculate pace (minutes per mile)
 df["pace"] = df["time_minutes"] / df["distance_miles"]
 
-# Separate data for Zena and Sota
 zena_data = df[df["name"] == "Zena"]
 sota_data = df[df["name"] == "Sota"]
 
-# Create a single plot for both Zena and Sota's pace over date
+zena_consistency = calculate_consistency(ZENA_CONSISTENCY_TUPLES)
+sota_consistency = calculate_consistency(SOTA_CONSISTENCY_TUPLES)
+save_plot("Zena Consistency Score", zena_consistency, "zena_score_plot.png")
+save_plot("Sota Consistency Score", sota_consistency, "sota_score_plot.png")
+
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 10))
 
 ########################################################################

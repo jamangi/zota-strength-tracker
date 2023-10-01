@@ -1,3 +1,5 @@
+import util
+
 ZENA_DATA = [
     #{"date": "2023-09-20", "distance_miles": 1.30, "time_minutes": 65, "name": "Zena"},
     {"date": "2023-09-21", "distance_miles": 2.82, "time_minutes": 65, "name": "Zena"},
@@ -7,3 +9,5 @@ ZENA_DATA = [
     {"date": "2023-09-29", "distance_miles": 3.80, "time_minutes": 65, "name": "Zena"},
     {"date": "2023-09-30", "distance_miles": 3.94, "time_minutes": 65, "name": "Zena"}
 ]
+
+ZENA_CONSISTENCY_TUPLES = [(datum['time_minutes'], util.to_date(datum['date'])) for datum in ZENA_DATA]
