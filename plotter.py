@@ -6,10 +6,12 @@ def plotter(line_data, title, x_label, y_label, filename):
     colors = ['red', 'green', 'blue']
     plt.figure(figsize=(15, 15))
     plt.title(title)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
+    plt.xlabel(x_label, fontsize=14)
+    plt.ylabel(y_label, fontsize=14)
     plt.grid(True)
     plt.xticks(rotation=-45)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
 
     for i in range(len(line_data)):
         data = line_data[i]
