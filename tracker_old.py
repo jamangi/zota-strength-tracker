@@ -18,7 +18,7 @@ sota_consistency = calculate_consistency(SOTA_CONSISTENCY_TUPLES)
 save_plot("Zena Consistency Score", zena_consistency, "zena_score_plot.png")
 save_plot("Sota Consistency Score", sota_consistency, "sota_score_plot.png")
 
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 10))
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 15))
 
 ########################################################################
 
@@ -50,6 +50,10 @@ ax2.legend()
 
 # Adjust layout
 plt.tight_layout()
+
+
+ax1.set_xticklabels(ax1.get_xticklabels(), rotation=-45)
+ax2.set_xticklabels(ax2.get_xticklabels(), rotation=-45)
 
 # Save the graph as an image (PNG format)
 plt.savefig("pace_graph.png")
