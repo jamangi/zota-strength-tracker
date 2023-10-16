@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
-from zena_data import ZENA_DATA, ZENA_CONSISTENCY_TUPLES
-from sota_data import SOTA_DATA, SOTA_CONSISTENCY_TUPLES
+from data_zena import ZENA_DATA, ZENA_CONSISTENCY_TUPLES
+from data_sota import SOTA_DATA, SOTA_CONSISTENCY_TUPLES
 from shauntal_tracker.consistency_tracker import calculate_consistency, save_plot
 from plotter import plotter
 
