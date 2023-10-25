@@ -16,6 +16,11 @@ SOTA_DATA = [
     {"date": "2023-10-11", "distance_miles": 2.75, "time_minutes": 30, "name": "Sota"},
     {"date": "2023-10-12", "distance_miles": 2.71, "time_minutes": 30, "name": "Sota"},
     {"date": "2023-10-14", "distance_miles": 1.37, "time_minutes": 30, "name": "Sota"},
+    {"date": "2023-10-16", "distance_miles": 2.84, "time_minutes": 30, "name": "Sota"},
+    {"date": "2023-10-18", "distance_miles": 2.56, "time_minutes": 30, "name": "Sota"},
+    {"date": "2023-10-19", "distance_miles": 2.42, "time_minutes": 30, "name": "Sota"},
+    {"date": "2023-10-21", "distance_miles": 3.01, "time_minutes": 30, "name": "Sota"},
+    {"date": "2023-10-23", "distance_miles": 2.80, "time_minutes": 30, "name": "Sota"},
 ]
 
 SOTA_CONSISTENCY_TUPLES = [(datum['time_minutes'], util.to_date(datum['date'])) for datum in SOTA_DATA]
